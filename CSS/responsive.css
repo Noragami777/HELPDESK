@@ -1,0 +1,466 @@
+/*
+=========================================================
+HELP DESK PWA
+Archivo: responsive.css
+
+Responsabilidad:
+- Adaptar la interfaz a tabletas y celulares.
+- Controlar el menú de navegación móvil.
+- Ajustar cuadrículas, espacios y tipografías.
+- Mantener una experiencia accesible y legible.
+
+Enfoque aplicado:
+Desktop first con puntos de ruptura progresivos.
+=========================================================
+*/
+
+/* =====================================================
+   TABLETAS Y PANTALLAS MEDIANAS
+   Ancho máximo: 992px
+===================================================== */
+
+@media (max-width: 992px) {
+    /* Reduce ligeramente el espaciado vertical general. */
+
+    .section {
+        padding-block: var(--spacing-16);
+    }
+
+    /* El hero pasa a una sola columna. */
+
+    .hero-section {
+        padding-block: var(--spacing-16);
+    }
+
+    .hero-section__content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-12);
+        text-align: center;
+    }
+
+    .hero-section__information {
+        max-width: 760px;
+        margin-inline: auto;
+    }
+
+    .hero-section__actions {
+        justify-content: center;
+    }
+
+    .hero-section__visual {
+        order: -1;
+    }
+
+    /* Las tarjetas de servicio pasan de tres a dos columnas. */
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--spacing-6);
+    }
+
+    /* Ajustes del pie de página. */
+
+    .main-footer__content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .main-footer__information {
+        width: 100%;
+    }
+
+    .main-footer__description {
+        margin-inline: auto;
+    }
+
+    .footer-navigation {
+        justify-content: center;
+    }
+
+    .main-footer__copyright {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   MENÚ MÓVIL Y TABLETAS PEQUEÑAS
+   Ancho máximo: 768px
+===================================================== */
+
+@media (max-width: 768px) {
+    /* Reduce el espacio lateral del contenedor. */
+
+    .container {
+        width: min(100% - 1.5rem, var(--container-max-width));
+    }
+
+    /* Encabezado. */
+
+    .main-header__content {
+        position: relative;
+        min-height: 4rem;
+        gap: var(--spacing-4);
+    }
+
+    .brand__logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand__description {
+        display: none;
+    }
+
+    /* Muestra el botón hamburguesa. */
+
+    .navigation-toggle {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    /*
+    El menú queda oculto por defecto en pantallas pequeñas.
+    La clase navigation-menu--open será agregada con JavaScript.
+    */
+
+    .navigation-menu {
+        position: absolute;
+        top: calc(100% + var(--spacing-2));
+        right: 0;
+        left: 0;
+        z-index: var(--z-index-menu);
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: var(--spacing-3);
+
+        background-color: var(--color-surface);
+        border: var(--border-width) var(--border-style) var(--color-border-light);
+        border-radius: var(--border-radius-md);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .navigation-menu--open {
+        display: flex;
+    }
+
+    .navigation-menu__item {
+        width: 100%;
+    }
+
+    .navigation-menu__link {
+        width: 100%;
+        min-height: 48px;
+        padding: var(--spacing-3) var(--spacing-4);
+
+        border-radius: var(--border-radius-sm);
+    }
+
+    .navigation-menu__link::after {
+        display: none;
+    }
+
+    .navigation-menu__link:hover,
+    .navigation-menu__link:focus-visible {
+        color: var(--color-primary);
+        background-color: var(--color-primary-light);
+    }
+
+    .navigation-menu__link--active {
+        color: var(--color-primary);
+        background-color: var(--color-primary-light);
+    }
+
+    /* Hero. */
+
+    .hero-section {
+        padding-block: var(--spacing-12);
+    }
+
+    .hero-section__content {
+        gap: var(--spacing-8);
+    }
+
+    .hero-section__title {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .hero-section__description {
+        font-size: var(--font-size-md);
+    }
+
+    .support-illustration {
+        width: min(100%, 260px);
+    }
+
+    /* Encabezados de sección. */
+
+    .section-heading {
+        margin-bottom: var(--spacing-8);
+    }
+
+    .section-heading__title {
+        font-size: clamp(1.75rem, 7vw, 2.4rem);
+    }
+
+    .section-heading__description {
+        font-size: var(--font-size-md);
+    }
+
+    /* Todas las cuadrículas principales pasan a una columna. */
+
+    .card-grid,
+    .benefits-grid,
+    .status-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-5);
+    }
+
+    .service-card,
+    .status-card {
+        padding: var(--spacing-6);
+    }
+
+    /* Aviso de conexión. */
+
+    .connection-status {
+        right: var(--spacing-3);
+        bottom: var(--spacing-3);
+        left: var(--spacing-3);
+
+        justify-content: center;
+
+        max-width: none;
+        border-radius: var(--border-radius-md);
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   CELULARES
+   Ancho máximo: 576px
+===================================================== */
+
+@media (max-width: 576px) {
+    /* Espaciados generales. */
+
+    .section {
+        padding-block: var(--spacing-12);
+    }
+
+    /* Marca de la aplicación. */
+
+    .brand {
+        gap: var(--spacing-2);
+    }
+
+    .brand__logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .brand__name {
+        font-size: var(--font-size-md);
+    }
+
+    /* Hero. */
+
+    .hero-section {
+        padding-block: var(--spacing-10);
+    }
+
+    .hero-section__eyebrow {
+        font-size: var(--font-size-xs);
+    }
+
+    .hero-section__title {
+        font-size: clamp(1.9rem, 10vw, 2.5rem);
+    }
+
+    .hero-section__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-section__actions .button {
+        width: 100%;
+    }
+
+    .support-illustration {
+        width: min(100%, 220px);
+    }
+
+    .support-illustration__icon {
+        font-size: 4rem;
+    }
+
+    /* Tarjetas. */
+
+    .service-card,
+    .benefit-item,
+    .status-card {
+        padding: var(--spacing-5);
+    }
+
+    .service-card__icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: var(--spacing-4);
+    }
+
+    .status-card__number {
+        font-size: var(--font-size-4xl);
+    }
+
+    /* Beneficios. */
+
+    .benefit-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Pie de página. */
+
+    .main-footer {
+        margin-top: var(--spacing-12);
+    }
+
+    .main-footer__content {
+        flex-direction: column;
+        align-items: center;
+        padding-block: var(--spacing-8);
+    }
+
+    .footer-navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-2);
+    }
+
+    .footer-navigation__link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* =====================================================
+   CELULARES MUY PEQUEÑOS
+   Ancho máximo: 360px
+===================================================== */
+
+@media (max-width: 360px) {
+    .container {
+        width: min(100% - 1rem, var(--container-max-width));
+    }
+
+    .brand__name {
+        font-size: var(--font-size-sm);
+    }
+
+    .navigation-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero-section__title {
+        font-size: 1.75rem;
+    }
+
+    .hero-section__description {
+        font-size: var(--font-size-sm);
+    }
+
+    .button {
+        padding-inline: var(--spacing-4);
+        font-size: var(--font-size-sm);
+    }
+
+    .service-card,
+    .benefit-item,
+    .status-card {
+        padding: var(--spacing-4);
+    }
+}
+
+/* =====================================================
+   PANTALLAS GRANDES
+   Ancho mínimo: 1400px
+===================================================== */
+
+@media (min-width: 1400px) {
+    .hero-section {
+        padding-block: 7rem;
+    }
+
+    .hero-section__content {
+        gap: var(--spacing-20);
+    }
+
+    .support-illustration {
+        width: 360px;
+    }
+}
+
+/* =====================================================
+   ORIENTACIÓN HORIZONTAL EN DISPOSITIVOS MÓVILES
+===================================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        padding-block: var(--spacing-8);
+    }
+
+    .hero-section__content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-8);
+        text-align: left;
+    }
+
+    .hero-section__actions {
+        justify-content: flex-start;
+    }
+
+    .hero-section__visual {
+        order: initial;
+    }
+
+    .support-illustration {
+        width: 190px;
+    }
+}
+
+/* =====================================================
+   IMPRESIÓN
+===================================================== */
+
+@media print {
+    .main-header,
+    .hero-section__actions,
+    .navigation-toggle,
+    .connection-status,
+    .main-footer {
+        display: none !important;
+    }
+
+    body {
+        color: var(--color-black);
+        background-color: var(--color-white);
+    }
+
+    .section {
+        padding-block: var(--spacing-6);
+    }
+
+    .service-card,
+    .benefit-item,
+    .status-card {
+        break-inside: avoid;
+
+        border: var(--border-width) var(--border-style) var(--color-gray-400);
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Detalle y seguimiento de solicitudes de soporte técnico Help Desk">
+
+    <meta name="theme-color"
+          content="#0b4f8a">
+          
+
+    <title>Detalle del Ticket | Help Desk</title>
+
+
+    <!-- =========================================
+         HOJAS DE ESTILO
+    ========================================== -->
+
+    <link rel="stylesheet" href="../CSS/variables.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/components.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         ENCABEZADO
+    ========================================== -->
+
+    <header class="header">
+
+        <div class="container header-container">
+
+
+            <!-- MARCA -->
+
+            <a href="../index.html"
+               class="brand"
+               aria-label="Ir al inicio">
+
+                <div class="brand-logo">
+                    🛠️
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>
+                        Help Desk
+                    </h1>
+
+                    <span>
+                        Gestión de soporte técnico
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- NAVEGACIÓN -->
+
+            <nav class="nav"
+                 aria-label="Navegación principal">
+
+                <a href="../index.html">
+                    Inicio
+                </a>
+
+                <a href="create-ticket.html">
+                    Nuevo ticket
+                </a>
+
+                <a href="my-tickets.html"
+                   class="active">
+                    Consultar tickets
+                </a>
+
+                <a href="about.html">
+                    Acerca de
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main">
+
+        <section class="ticket-section">
+
+            <div class="container">
+
+
+                <!-- =====================================
+                     BOTÓN REGRESAR
+                ====================================== -->
+
+                <div class="detail-back">
+
+                    <a href="my-tickets.html"
+                       class="btn btn-secondary">
+
+                        ← Volver a tickets
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     TICKET NO ENCONTRADO
+                ====================================== -->
+
+                <div
+                    id="ticketNotFound"
+                    class="empty-state"
+                    hidden
+                >
+
+                    <span class="empty-state-icon">
+                        ⚠️
+                    </span>
+
+                    <h2>
+                        Ticket no encontrado
+                    </h2>
+
+                    <p>
+                        La solicitud que intentas consultar
+                        no existe o fue eliminada.
+                    </p>
+
+                    <a
+                        href="my-tickets.html"
+                        class="btn btn-primary"
+                    >
+                        Consultar tickets
+                    </a>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     CONTENIDO DEL TICKET
+                ====================================== -->
+
+                <div id="ticketDetail">
+
+
+                    <!-- =================================
+                         ENCABEZADO DEL TICKET
+                    ================================== -->
+
+                    <div class="page-header ticket-detail-header">
+
+                        <span class="section-label">
+                            Detalle de solicitud
+                        </span>
+
+
+                        <div class="ticket-title-row">
+
+                            <div>
+
+                                <p class="ticket-id-label">
+                                    Ticket
+                                </p>
+
+                                <h2 id="detailTicketId">
+                                    TK-0000
+                                </h2>
+
+                            </div>
+
+
+                            <div>
+
+                                <span
+                                    id="detailStatus"
+                                    class="badge badge-open"
+                                >
+                                    Abierto
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <p id="detailSubject">
+                            Información del ticket de soporte técnico.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         INFORMACIÓN GENERAL
+                    ================================== -->
+
+                    <div class="card detail-card">
+
+                        <div class="detail-card-header">
+
+                            <h3>
+                                Información general
+                            </h3>
+
+                            <p>
+                                Datos principales de la solicitud.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-grid">
+
+
+                            <!-- SOLICITANTE -->
+
+                            <div class="detail-item">
+
+                                <span class="detail-label">
+                                    Solicitante
+                                </span>
+
+                                <strong id="detailName">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <!-- CORREO -->
+
+                            <div class="detail-item">
+
+                                <span class="detail-label">
+                                    Correo electrónico
+                                </span>
+
+                                <strong id="detailEmail">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <!-- CATEGORÍA -->
+
+                            <div class="detail-item">
+
+                                <span class="detail-label">
+                                    Categoría
+                                </span>
+
+                                <strong id="detailCategory">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <!-- PRIORIDAD -->
+
+                            <div class="detail-item">
+
+                                <span class="detail-label">
+                                    Prioridad
+                                </span>
+
+                                <span
+                                    id="detailPriority"
+                                    class="priority"
+                                >
+                                    -
+                                </span>
+
+                            </div>
+
+
+                            <!-- FECHA CREACIÓN -->
+
+                            <div class="detail-item">
+
+                                <span class="detail-label">
+                                    Fecha de creación
+                                </span>
+
+                                <strong id="detailCreatedAt">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <!-- ÚLTIMA ACTUALIZACIÓN -->
+
+                            <div class="detail-item">
+
+                                <span class="detail-label">
+                                    Última actualización
+                                </span>
+
+                                <strong id="detailUpdatedAt">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         ASUNTO
+                    ================================== -->
+
+                    <div class="card detail-card">
+
+                        <div class="detail-card-header">
+
+                            <h3>
+                                Asunto
+                            </h3>
+
+                        </div>
+
+                        <p
+                            id="detailFullSubject"
+                            class="detail-description"
+                        >
+                            -
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         DESCRIPCIÓN DEL PROBLEMA
+                    ================================== -->
+
+                    <div class="card detail-card">
+
+                        <div class="detail-card-header">
+
+                            <h3>
+                                Descripción del problema
+                            </h3>
+
+                            <p>
+                                Información suministrada por el usuario
+                                al registrar la solicitud.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            id="detailDescription"
+                            class="detail-description"
+                        >
+                            -
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         GESTIÓN DEL ESTADO
+                    ================================== -->
+
+                    <div class="card detail-card">
+
+                        <div class="detail-card-header">
+
+                            <h3>
+                                Gestión del ticket
+                            </h3>
+
+                            <p>
+                                Actualiza el estado de la solicitud
+                                según el avance realizado por soporte.
+                            </p>
+
+                        </div>
+
+
+                        <div class="ticket-management">
+
+
+                            <div class="form-group">
+
+                                <label for="ticketStatus">
+                                    Estado
+                                </label>
+
+                                <select id="ticketStatus">
+
+                                    <option value="open">
+                                        Abierto
+                                    </option>
+
+                                    <option value="progress">
+                                        En proceso
+                                    </option>
+
+                                    <option value="resolved">
+                                        Resuelto
+                                    </option>
+
+                                    <option value="closed">
+                                        Cerrado
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="updateStatusButton"
+                                class="btn btn-primary"
+                            >
+                                Actualizar estado
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         ZONA DE ACCIONES
+                    ================================== -->
+
+                    <div class="card detail-card danger-zone">
+
+                        <div class="detail-card-header">
+
+                            <h3>
+                                Acciones del ticket
+                            </h3>
+
+                            <p>
+                                Las siguientes acciones afectan
+                                directamente esta solicitud.
+                            </p>
+
+                        </div>
+
+
+                        <div class="detail-actions">
+
+                            <a
+                                href="my-tickets.html"
+                                class="btn btn-secondary"
+                            >
+                                Volver
+                            </a>
+
+
+                            <button
+                                type="button"
+                                id="deleteTicketButton"
+                                class="btn btn-danger"
+                            >
+                                Eliminar ticket
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <p>
+                © 2026 Help Desk PWA
+            </p>
+
+            <p>
+                Sistema de Gestión Inteligente
+                de Soporte Técnico
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../JS/app.js"></script>
+
+    <script src="../JS/tickets.js"></script>
+
+    <script src="../JS/ticket-detail.js"></script>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/tickets.js"></script>
+    <script src="../JS/ticket-detail.js"></script>
+    <script src="../JS/register-sw.js"></script>
+
+</body>
+
+</html>

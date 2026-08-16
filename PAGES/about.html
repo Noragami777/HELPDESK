@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Información sobre la PWA Help Desk para la gestión de soporte técnico">
+
+    <meta name="theme-color"
+          content="#0b4f8a">
+
+    <title>Acerca de | Help Desk</title>
+
+
+    <!-- =========================================
+         HOJAS DE ESTILO
+    ========================================== -->
+
+    <link rel="stylesheet" href="../CSS/variables.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/components.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+     ENCABEZADO
+========================================== -->
+
+<header class="main-header">
+
+    <div class="container main-header__content">
+
+        <!-- MARCA -->
+
+        <a href="../index.html"
+           class="brand"
+           aria-label="Ir al inicio">
+
+            <div class="brand__logo">
+                🛠️
+            </div>
+
+            <div class="brand__text">
+
+                <span class="brand__name">
+                    Help Desk
+                </span>
+
+                <span class="brand__description">
+                    Gestión de soporte técnico
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- BOTÓN MENÚ MÓVIL -->
+
+        <button
+            type="button"
+            id="navigation-toggle"
+            class="navigation-toggle"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="navigation-menu"
+        >
+
+            ☰
+
+        </button>
+
+
+        <!-- NAVEGACIÓN -->
+
+        <nav aria-label="Navegación principal">
+
+            <ul
+                id="navigation-menu"
+                class="navigation-menu"
+            >
+
+                <li class="navigation-menu__item">
+
+                    <a
+                        href="../index.html"
+                        class="navigation-menu__link"
+                    >
+                        Inicio
+                    </a>
+
+                </li>
+
+
+                <li class="navigation-menu__item">
+
+                    <a
+                        href="create-ticket.html"
+                        class="navigation-menu__link"
+                    >
+                        Nuevo ticket
+                    </a>
+
+                </li>
+
+
+                <li class="navigation-menu__item">
+
+                    <a
+                        href="my-tickets.html"
+                        class="navigation-menu__link"
+                    >
+                        Consultar tickets
+                    </a>
+
+                </li>
+
+
+                <li class="navigation-menu__item">
+
+                    <a
+                        href="about.html"
+                        class="navigation-menu__link navigation-menu__link--active"
+                        aria-current="page"
+                    >
+                        Acerca de
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main">
+
+
+        <!-- =====================================
+             INTRODUCCIÓN
+        ====================================== -->
+
+        <section class="ticket-section">
+
+            <div class="container">
+
+
+                <div class="page-header">
+
+                    <span class="section-label">
+                        Sobre el proyecto
+                    </span>
+
+
+                    <h2>
+                        Help Desk PWA
+                    </h2>
+
+
+                    <p>
+                        Sistema web progresivo diseñado para facilitar
+                        el registro, consulta y seguimiento de solicitudes
+                        de soporte técnico desde computadores,
+                        tabletas y dispositivos móviles.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     DESCRIPCIÓN DEL SISTEMA
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            ¿Qué es Help Desk?
+                        </h3>
+
+                    </div>
+
+
+                    <p class="detail-description">
+
+                        Help Desk es una aplicación web progresiva
+                        orientada a la gestión de incidentes y solicitudes
+                        de soporte técnico.
+
+                        Su objetivo es proporcionar un punto centralizado
+                        donde los usuarios puedan registrar problemas,
+                        consultar el estado de sus solicitudes y hacer
+                        seguimiento al proceso de atención.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     OBJETIVO
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            Objetivo del sistema
+                        </h3>
+
+                    </div>
+
+
+                    <p class="detail-description">
+
+                        Mejorar la gestión de soporte técnico mediante
+                        una plataforma accesible, organizada y fácil de usar
+                        que permita registrar incidentes, clasificarlos,
+                        establecer prioridades y realizar seguimiento
+                        durante todo su ciclo de atención.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     CARACTERÍSTICAS
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            Funcionalidades principales
+                        </h3>
+
+                        <p>
+                            El MVP del sistema contempla las siguientes
+                            capacidades.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-grid">
+
+
+                        <!-- REGISTRO -->
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Registro de tickets
+                            </span>
+
+                            <strong>
+                                Creación de solicitudes
+                                de soporte técnico.
+                            </strong>
+
+                        </div>
+
+
+                        <!-- CONSULTA -->
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Consulta
+                            </span>
+
+                            <strong>
+                                Visualización de tickets
+                                registrados.
+                            </strong>
+
+                        </div>
+
+
+                        <!-- BÚSQUEDA -->
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Búsqueda
+                            </span>
+
+                            <strong>
+                                Localización de tickets
+                                mediante ID, usuario o asunto.
+                            </strong>
+
+                        </div>
+
+
+                        <!-- FILTROS -->
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Filtros
+                            </span>
+
+                            <strong>
+                                Filtrado por estado
+                                y prioridad.
+                            </strong>
+
+                        </div>
+
+
+                        <!-- SEGUIMIENTO -->
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Seguimiento
+                            </span>
+
+                            <strong>
+                                Consulta detallada del
+                                progreso de cada solicitud.
+                            </strong>
+
+                        </div>
+
+
+                        <!-- ESTADOS -->
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Gestión de estados
+                            </span>
+
+                            <strong>
+                                Abierto, en proceso,
+                                resuelto y cerrado.
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     CICLO DEL TICKET
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            Ciclo de atención del ticket
+                        </h3>
+
+                        <p>
+                            Cada solicitud puede avanzar por diferentes
+                            estados según el trabajo realizado por soporte.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-grid">
+
+
+                        <div class="detail-item">
+
+                            <span class="badge badge-open">
+                                Abierto
+                            </span>
+
+                            <strong>
+                                El ticket fue registrado
+                                y está pendiente de revisión.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="badge badge-progress">
+                                En proceso
+                            </span>
+
+                            <strong>
+                                El equipo de soporte está
+                                trabajando en la solicitud.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="badge badge-resolved">
+                                Resuelto
+                            </span>
+
+                            <strong>
+                                Se aplicó una solución
+                                al incidente reportado.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="badge badge-closed">
+                                Cerrado
+                            </span>
+
+                            <strong>
+                                La solicitud finalizó
+                                su ciclo de atención.
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     PWA
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            ¿Por qué es una PWA?
+                        </h3>
+
+                    </div>
+
+
+                    <p class="detail-description">
+
+                        El sistema está diseñado bajo el enfoque
+                        Progressive Web App (PWA).
+
+                        Esto permitirá que la aplicación pueda instalarse
+                        desde un navegador compatible, adaptarse a diferentes
+                        tamaños de pantalla y disponer de recursos almacenados
+                        en caché para mejorar la experiencia en condiciones
+                        de conectividad limitada.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     BENEFICIOS PWA
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            Beneficios de la solución
+                        </h3>
+
+                    </div>
+
+
+                    <div class="detail-grid">
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Responsive
+                            </span>
+
+                            <strong>
+                                Adaptación a computador,
+                                tableta y celular.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Instalable
+                            </span>
+
+                            <strong>
+                                Posibilidad de instalar
+                                la aplicación desde el navegador.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Acceso rápido
+                            </span>
+
+                            <strong>
+                                Disponible mediante navegador
+                                sin necesidad de una tienda de aplicaciones.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Caché
+                            </span>
+
+                            <strong>
+                                Recursos esenciales disponibles
+                                incluso ante problemas de conectividad.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Actualización
+                            </span>
+
+                            <strong>
+                                Los cambios pueden distribuirse
+                                directamente desde el servidor.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Multiplataforma
+                            </span>
+
+                            <strong>
+                                Compatible con diferentes
+                                sistemas operativos y navegadores.
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     TECNOLOGÍAS
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            Tecnologías utilizadas
+                        </h3>
+
+                    </div>
+
+
+                    <div class="detail-grid">
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                HTML5
+                            </span>
+
+                            <strong>
+                                Estructura semántica
+                                de las interfaces.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                CSS3
+                            </span>
+
+                            <strong>
+                                Diseño visual y
+                                comportamiento responsive.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                JavaScript
+                            </span>
+
+                            <strong>
+                                Lógica y comportamiento
+                                dinámico de la aplicación.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                LocalStorage
+                            </span>
+
+                            <strong>
+                                Persistencia local
+                                temporal de tickets.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Web App Manifest
+                            </span>
+
+                            <strong>
+                                Información necesaria
+                                para instalar la PWA.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Service Worker
+                            </span>
+
+                            <strong>
+                                Gestión de caché
+                                y funcionamiento offline.
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     ARQUITECTURA ACTUAL
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            Arquitectura actual del prototipo
+                        </h3>
+
+                    </div>
+
+
+                    <p class="detail-description">
+
+                        Esta primera versión funciona principalmente
+                        en el lado del cliente.
+
+                        Los tickets son almacenados en el LocalStorage
+                        del navegador, permitiendo demostrar el flujo
+                        funcional del MVP sin depender todavía
+                        de un servidor o una base de datos externa.
+
+                        En una fase posterior, esta arquitectura
+                        puede evolucionar hacia una API REST,
+                        autenticación de usuarios y una base de datos
+                        centralizada.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     ACCIONES
+                ================================== -->
+
+                <div class="card detail-card">
+
+                    <div class="detail-card-header">
+
+                        <h3>
+                            Comenzar a utilizar Help Desk
+                        </h3>
+
+                        <p>
+                            Registra una solicitud o consulta
+                            los tickets existentes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-actions">
+
+                        <a
+                            href="my-tickets.html"
+                            class="btn btn-secondary"
+                        >
+                            Consultar tickets
+                        </a>
+
+
+                        <a
+                            href="create-ticket.html"
+                            class="btn btn-primary"
+                        >
+                            Crear nuevo ticket
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <p>
+                © 2026 Help Desk PWA
+            </p>
+
+
+            <p>
+                Sistema de Gestión Inteligente
+                de Soporte Técnico
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../JS/app.js"></script>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/tickets.js"></script>
+    <script src="../JS/register-sw.js"></script>
+
+</body>
+
+</html>

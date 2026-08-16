@@ -1,0 +1,1155 @@
+/* =========================================================
+   COMPONENTS.CSS
+   Proyecto: Help Desk PWA
+
+   Componentes reutilizables de la aplicación:
+   - Botones
+   - Formularios
+   - Tarjetas
+   - Badges
+   - Prioridades
+   - Alertas
+   - Tablas
+   - Estados vacíos
+   - Detalle del ticket
+========================================================= */
+
+
+/* =========================================================
+   1. BOTONES
+========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0.75rem 1.4rem;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   2. BOTÓN PRINCIPAL
+========================================================= */
+
+.btn-primary {
+    background-color: #0b4f8a;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(11, 79, 138, 0.20);
+}
+
+
+.btn-primary:hover {
+    background-color: #083d6b;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 16px rgba(11, 79, 138, 0.25);
+}
+
+
+/* =========================================================
+   3. BOTÓN SECUNDARIO
+========================================================= */
+
+.btn-secondary {
+    background-color: #ffffff;
+
+    color: #334155;
+
+    border: 1px solid #cbd5e1;
+}
+
+
+.btn-secondary:hover {
+    background-color: #f1f5f9;
+
+    border-color: #94a3b8;
+}
+
+
+/* =========================================================
+   4. BOTÓN DE PELIGRO / ELIMINAR
+========================================================= */
+
+.btn-danger {
+    background-color: #dc2626;
+
+    color: #ffffff;
+
+    border: 1px solid #dc2626;
+
+    box-shadow:
+        0 4px 12px rgba(220, 38, 38, 0.18);
+}
+
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+
+    border-color: #b91c1c;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 16px rgba(220, 38, 38, 0.24);
+}
+
+
+/* =========================================================
+   5. FOCUS DE BOTONES
+========================================================= */
+
+.btn:focus-visible {
+    outline: 3px solid rgba(11, 79, 138, 0.25);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   6. ENCABEZADO DE PÁGINAS INTERNAS
+========================================================= */
+
+.page-header {
+    max-width: 750px;
+
+    margin-bottom: 2rem;
+}
+
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 0.8rem;
+
+    color: #0b4f8a;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+}
+
+
+.page-header h2 {
+    margin: 0 0 1rem 0;
+
+    color: #1f2933;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    line-height: 1.1;
+}
+
+
+.page-header p {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   7. SECCIÓN DE TICKETS
+========================================================= */
+
+.ticket-section {
+    min-height: calc(100vh - 160px);
+
+    padding: 4rem 0;
+
+    background-color: #f8fafc;
+}
+
+
+/* =========================================================
+   8. TARJETA DEL FORMULARIO
+========================================================= */
+
+.ticket-card {
+    max-width: 900px;
+
+    padding: 2rem;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   9. FORMULARIO DE TICKET
+========================================================= */
+
+#ticketForm {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+}
+
+
+/* =========================================================
+   10. GRUPOS DEL FORMULARIO
+========================================================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   11. LABELS
+========================================================= */
+
+.form-group label {
+    color: #1e293b;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   12. INPUTS, SELECT Y TEXTAREA
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 0.85rem 1rem;
+
+    background-color: #ffffff;
+
+    color: #1f2937;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.form-group input,
+.form-group select {
+    min-height: 48px;
+}
+
+
+.form-group textarea {
+    min-height: 150px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   13. PLACEHOLDER
+========================================================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   14. FOCUS DE CAMPOS
+========================================================= */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0b4f8a;
+
+    box-shadow:
+        0 0 0 3px rgba(11, 79, 138, 0.12);
+}
+
+
+/* =========================================================
+   15. CAMPOS VÁLIDOS
+========================================================= */
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+    border-color: #22c55e;
+}
+
+
+/* =========================================================
+   16. TEXTO DE AYUDA
+========================================================= */
+
+.form-group small {
+    color: #64748b;
+
+    font-size: 0.82rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   17. ACCIONES DEL FORMULARIO
+========================================================= */
+
+.form-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 1rem;
+
+    padding-top: 0.5rem;
+}
+
+
+/* =========================================================
+   18. TARJETAS GENERALES
+========================================================= */
+
+.card {
+    background-color: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 1.5rem;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================================================
+   19. BADGES / ESTADOS
+========================================================= */
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0.35rem 0.75rem;
+
+    border-radius: 999px;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+}
+
+
+/* ABIERTO */
+
+.badge-open {
+    background-color: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+
+/* EN PROCESO */
+
+.badge-progress {
+    background-color: #fef3c7;
+
+    color: #92400e;
+}
+
+
+/* RESUELTO */
+
+.badge-resolved {
+    background-color: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* CERRADO */
+
+.badge-closed {
+    background-color: #e2e8f0;
+
+    color: #475569;
+}
+
+
+/* =========================================================
+   20. PRIORIDADES
+========================================================= */
+
+.priority {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.4rem;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+}
+
+
+/* BAJA */
+
+.priority-low {
+    color: #16a34a;
+}
+
+
+/* MEDIA */
+
+.priority-medium {
+    color: #ca8a04;
+}
+
+
+/* ALTA */
+
+.priority-high {
+    color: #ea580c;
+}
+
+
+/* CRÍTICA */
+
+.priority-critical {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   21. ALERTAS
+========================================================= */
+
+.alert {
+    width: 100%;
+
+    padding: 1rem 1.2rem;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 10px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+}
+
+
+/* ÉXITO */
+
+.alert-success {
+    background-color: #dcfce7;
+
+    border: 1px solid #86efac;
+
+    color: #166534;
+}
+
+
+/* ERROR */
+
+.alert-error {
+    background-color: #fee2e2;
+
+    border: 1px solid #fca5a5;
+
+    color: #991b1b;
+}
+
+
+/* INFORMACIÓN */
+
+.alert-info {
+    background-color: #dbeafe;
+
+    border: 1px solid #93c5fd;
+
+    color: #1e40af;
+}
+
+
+/* ADVERTENCIA */
+
+.alert-warning {
+    background-color: #fef3c7;
+
+    border: 1px solid #fde68a;
+
+    color: #92400e;
+}
+
+
+/* =========================================================
+   22. CONTROLES DE CONSULTA DE TICKETS
+========================================================= */
+
+.tickets-controls {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 1rem;
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* =========================================================
+   23. RESUMEN DE TICKETS
+========================================================= */
+
+.tickets-summary {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    margin-bottom: 1rem;
+}
+
+
+.tickets-summary p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.95rem;
+}
+
+
+.tickets-summary strong {
+    color: #0b4f8a;
+}
+
+
+/* =========================================================
+   24. TABLA DE TICKETS
+========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+
+.ticket-table {
+    width: 100%;
+
+    min-width: 850px;
+
+    border-collapse: collapse;
+}
+
+
+.ticket-table th,
+.ticket-table td {
+    padding: 1rem;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.ticket-table th {
+    background-color: #f8fafc;
+
+    color: #334155;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.03em;
+}
+
+
+.ticket-table td {
+    color: #475569;
+
+    font-size: 0.95rem;
+
+    vertical-align: middle;
+}
+
+
+.ticket-table tbody tr {
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.ticket-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+
+.ticket-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* BOTÓN VER EN TABLA */
+
+.btn-view-ticket {
+    min-height: 38px;
+
+    padding: 0.5rem 0.9rem;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   25. ESTADO VACÍO
+========================================================= */
+
+.empty-state {
+    padding: 3rem 1.5rem;
+
+    text-align: center;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+
+.empty-state-icon {
+    display: block;
+
+    margin-bottom: 1rem;
+
+    font-size: 3rem;
+}
+
+
+.empty-state h2,
+.empty-state h3 {
+    margin-top: 0;
+
+    margin-bottom: 0.5rem;
+
+    color: #1e293b;
+}
+
+
+.empty-state p {
+    max-width: 500px;
+
+    margin: 0 auto 1.5rem;
+
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   26. BOTÓN VOLVER DEL DETALLE
+========================================================= */
+
+.detail-back {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   27. ENCABEZADO DEL DETALLE
+========================================================= */
+
+.ticket-detail-header {
+    max-width: 100%;
+}
+
+
+.ticket-title-row {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 1.5rem;
+
+    margin-bottom: 0.75rem;
+}
+
+
+.ticket-title-row h2 {
+    margin-bottom: 0;
+}
+
+
+.ticket-id-label {
+    margin: 0 0 0.25rem 0 !important;
+
+    color: #64748b !important;
+
+    font-size: 0.85rem !important;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   28. TARJETAS DEL DETALLE DEL TICKET
+========================================================= */
+
+.detail-card {
+    margin-bottom: 1.5rem;
+}
+
+
+.detail-card-header {
+    margin-bottom: 1.4rem;
+}
+
+
+.detail-card-header h3 {
+    margin: 0 0 0.4rem 0;
+
+    color: #1e293b;
+
+    font-size: 1.2rem;
+}
+
+
+.detail-card-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.92rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   29. GRID DE INFORMACIÓN DEL TICKET
+========================================================= */
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1.4rem 2rem;
+}
+
+
+/* =========================================================
+   30. CAMPOS DEL DETALLE
+========================================================= */
+
+.detail-item {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0.4rem;
+
+    min-width: 0;
+}
+
+
+.detail-label {
+    color: #64748b;
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.03em;
+}
+
+
+.detail-item strong {
+    max-width: 100%;
+
+    color: #1e293b;
+
+    font-size: 0.97rem;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   31. DESCRIPCIÓN DEL TICKET
+========================================================= */
+
+.detail-description {
+    margin: 0;
+
+    color: #334155;
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+
+    white-space: pre-wrap;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   32. GESTIÓN DEL TICKET
+========================================================= */
+
+.ticket-management {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 1rem;
+}
+
+
+.ticket-management .form-group {
+    flex: 1;
+}
+
+
+.ticket-management .btn {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   33. ACCIONES DEL DETALLE
+========================================================= */
+
+.detail-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+}
+
+
+/* =========================================================
+   34. ZONA DE PELIGRO
+========================================================= */
+
+.danger-zone {
+    border-color: #fecaca;
+
+    background-color: #fffafa;
+}
+
+
+.danger-zone .detail-card-header h3 {
+    color: #991b1b;
+}
+
+
+/* =========================================================
+   35. ELEMENTOS OCULTOS
+========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   36. ESTADOS DISABLED
+========================================================= */
+
+.btn:disabled,
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   37. RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .tickets-controls {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .tickets-controls .form-group:first-child {
+        grid-column: 1 / -1;
+    }
+
+
+    .detail-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   38. RESPONSIVE - MÓVIL
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .ticket-section {
+        padding: 2.5rem 0;
+    }
+
+
+    /* FORMULARIO */
+
+    .ticket-card {
+        padding: 1.4rem;
+    }
+
+
+    #ticketForm {
+        grid-template-columns: 1fr;
+
+        gap: 1.2rem;
+    }
+
+
+    .form-group-full {
+        grid-column: auto;
+    }
+
+
+    .form-actions {
+        grid-column: auto;
+
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+
+    /* CONSULTA */
+
+    .tickets-controls {
+        grid-template-columns: 1fr;
+    }
+
+
+    .tickets-controls .form-group:first-child {
+        grid-column: auto;
+    }
+
+
+    .tickets-summary {
+        justify-content: flex-start;
+    }
+
+
+    /* DETALLE */
+
+    .ticket-title-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .ticket-management {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .ticket-management .btn {
+        width: 100%;
+    }
+
+
+    .detail-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .detail-actions .btn {
+        width: 100%;
+    }
+
+
+    .detail-back .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   39. RESPONSIVE - PANTALLAS PEQUEÑAS
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .ticket-card,
+    .card,
+    .empty-state {
+        padding: 1rem;
+
+        border-radius: 12px;
+    }
+
+
+    .page-header h2 {
+        font-size: 2rem;
+    }
+
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+
+    .ticket-title-row {
+        gap: 1rem;
+    }
+
+
+    .ticket-title-row h2 {
+        font-size: 1.9rem;
+    }
+
+
+    .detail-card-header h3 {
+        font-size: 1.1rem;
+    }
+
+}

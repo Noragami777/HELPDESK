@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Consulta de tickets registrados en Help Desk">
+
+    <meta name="theme-color"
+          content="#0b4f8a">
+
+    <title>Consultar Tickets | Help Desk</title>
+
+    <!-- =========================================
+         HOJAS DE ESTILO
+    ========================================== -->
+
+    <link rel="stylesheet" href="../CSS/variables.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/components.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         ENCABEZADO
+    ========================================== -->
+
+<header class="main-header">
+
+    <div class="container main-header__content">
+
+        <a href="../index.html"
+           class="brand"
+           aria-label="Ir al inicio">
+
+            <div class="brand__logo">
+                🛠️
+            </div>
+
+            <div class="brand__text">
+
+                <span class="brand__name">
+                    Help Desk
+                </span>
+
+                <span class="brand__description">
+                    Gestión de soporte técnico
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            type="button"
+            id="navigation-toggle"
+            class="navigation-toggle"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="navigation-menu"
+        >
+            ☰
+        </button>
+
+
+        <nav aria-label="Navegación principal">
+
+            <ul
+                id="navigation-menu"
+                class="navigation-menu"
+            >
+
+                <li class="navigation-menu__item">
+
+                    <a
+                        href="../index.html"
+                        class="navigation-menu__link"
+                    >
+                        Inicio
+                    </a>
+
+                </li>
+
+
+                <li class="navigation-menu__item">
+
+                    <a
+                        href="create-ticket.html"
+                        class="navigation-menu__link"
+                    >
+                        Nuevo ticket
+                    </a>
+
+                </li>
+
+
+                <li class="navigation-menu__item">
+
+                    <a
+                        href="my-tickets.html"
+                        class="navigation-menu__link navigation-menu__link--active"
+                        aria-current="page"
+                    >
+                        Consultar tickets
+                    </a>
+
+                </li>
+
+
+                <li class="navigation-menu__item">
+
+                    <a
+                        href="about.html"
+                        class="navigation-menu__link"
+                    >
+                        Acerca de
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main">
+
+        <section class="ticket-section">
+
+            <div class="container">
+
+
+                <!-- =====================================
+                     ENCABEZADO DE LA PÁGINA
+                ====================================== -->
+
+                <div class="page-header">
+
+                    <span class="section-label">
+                        Gestión de solicitudes
+                    </span>
+
+                    <h2>
+                        Consultar tickets
+                    </h2>
+
+                    <p>
+                        Consulta las solicitudes de soporte técnico
+                        registradas en el sistema y revisa su estado,
+                        prioridad, categoría y fecha de creación.
+                    </p>
+
+                </div>
+
+
+                <!-- =====================================
+                     CONTROLES DE BÚSQUEDA
+                ====================================== -->
+
+                <div class="card tickets-controls">
+
+                    <div class="form-group">
+
+                        <label for="ticketSearch">
+                            Buscar ticket
+                        </label>
+
+                        <input
+                            type="search"
+                            id="ticketSearch"
+                            placeholder="Buscar por ID, asunto o usuario..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="statusFilter">
+                            Estado
+                        </label>
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                Todos los estados
+                            </option>
+
+                            <option value="open">
+                                Abierto
+                            </option>
+
+                            <option value="progress">
+                                En proceso
+                            </option>
+
+                            <option value="resolved">
+                                Resuelto
+                            </option>
+
+                            <option value="closed">
+                                Cerrado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="priorityFilter">
+                            Prioridad
+                        </label>
+
+                        <select id="priorityFilter">
+
+                            <option value="all">
+                                Todas las prioridades
+                            </option>
+
+                            <option value="low">
+                                Baja
+                            </option>
+
+                            <option value="medium">
+                                Media
+                            </option>
+
+                            <option value="high">
+                                Alta
+                            </option>
+
+                            <option value="critical">
+                                Crítica
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================
+                     RESUMEN DE TICKETS
+                ====================================== -->
+
+                <div class="tickets-summary">
+
+                    <p>
+                        Total de tickets:
+                        <strong id="ticketCount">
+                            0
+                        </strong>
+                    </p>
+
+                </div>
+
+
+                <!-- =====================================
+                     TABLA DE TICKETS
+                ====================================== -->
+
+                <div class="table-container"
+                     id="ticketsTableContainer">
+
+                    <table class="ticket-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID
+                                </th>
+
+                                <th>
+                                    Asunto
+                                </th>
+
+                                <th>
+                                    Categoría
+                                </th>
+
+                                <th>
+                                    Prioridad
+                                </th>
+
+                                <th>
+                                    Estado
+                                </th>
+
+                                <th>
+                                    Fecha
+                                </th>
+
+                                <th>
+                                    Acciones
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="ticketsTableBody">
+
+                            <!--
+                                Los tickets serán generados
+                                dinámicamente mediante JavaScript.
+                            -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =====================================
+                     ESTADO VACÍO
+                ====================================== -->
+
+                <div class="empty-state"
+                     id="emptyTickets">
+
+                    <span class="empty-state-icon">
+                        🎫
+                    </span>
+
+                    <h3>
+                        No hay tickets registrados
+                    </h3>
+
+                    <p>
+                        Todavía no has creado solicitudes de soporte.
+                        Cuando registres un ticket, aparecerá aquí.
+                    </p>
+
+                    <a href="create-ticket.html"
+                       class="btn btn-primary">
+
+                        Crear primer ticket
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <p>
+                © 2026 Help Desk PWA
+            </p>
+
+            <p>
+                Sistema de Gestión Inteligente
+                de Soporte Técnico
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../JS/app.js"></script>
+
+    <script src="../JS/tickets.js"></script>
+
+    <script src="../JS/my-tickets.js"></script>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/tickets.js"></script>
+    <script src="../JS/my-tickets.js"></script>
+    <script src="../JS/register-sw.js"></script>
+
+</body>
+
+</html>

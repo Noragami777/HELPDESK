@@ -1,0 +1,676 @@
+/*
+=========================================================
+HELP DESK PWA
+Archivo: styles.css
+
+Responsabilidad:
+- Reset CSS
+- Estilos globales
+- Tipografía
+- Layout principal
+- Header
+- Footer
+- Secciones generales
+- Utilidades
+
+Los componentes (botones, tarjetas, etc.)
+se definen en components.css
+=========================================================
+*/
+
+/* =====================================================
+   RESET GENERAL
+===================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =====================================================
+   CONFIGURACIÓN BASE DEL DOCUMENTO
+===================================================== */
+
+html{
+
+    font-size:16px;
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:var(--font-family-primary);
+
+    font-size:var(--font-size-md);
+
+    line-height:var(--line-height-normal);
+
+    color:var(--color-text-primary);
+
+    background:var(--color-background);
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+/* =====================================================
+   IMÁGENES
+===================================================== */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/* =====================================================
+   ENLACES
+===================================================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:color var(--transition-fast);
+
+}
+
+a:hover{
+
+    color:var(--color-link-hover);
+
+}
+
+/* =====================================================
+   LISTAS
+===================================================== */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font:inherit;
+
+}
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+input,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+/* =====================================================
+   CONTENEDOR PRINCIPAL
+===================================================== */
+
+.container{
+
+    width:min(100% - 2rem, var(--container-max-width));
+
+    margin-inline:auto;
+
+}
+
+/* =====================================================
+   CONTENIDO PRINCIPAL
+===================================================== */
+
+main{
+
+    flex:1;
+
+}
+
+/* =====================================================
+   ESPACIADO GENERAL ENTRE SECCIONES
+===================================================== */
+
+.section{
+
+    padding-block:var(--spacing-20);
+
+}
+
+.section--alternative{
+
+    background:var(--color-surface-alternative);
+
+}
+
+/* =====================================================
+   ENCABEZADOS DE SECCIÓN
+===================================================== */
+
+.section-heading{
+
+    max-width:760px;
+
+    margin-inline:auto;
+
+    margin-bottom:var(--spacing-12);
+
+    text-align:center;
+
+}
+
+.section-heading__eyebrow{
+
+    color:var(--color-primary);
+
+    font-size:var(--font-size-sm);
+
+    font-weight:var(--font-weight-semibold);
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:var(--spacing-3);
+
+}
+
+.section-heading__title{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    line-height:1.2;
+
+    margin-bottom:var(--spacing-4);
+
+}
+
+.section-heading__description{
+
+    color:var(--color-text-secondary);
+
+    font-size:var(--font-size-lg);
+
+}
+
+/* =====================================================
+   SKIP LINK
+===================================================== */
+
+.skip-link{
+
+    position:absolute;
+
+    top:-100px;
+
+    left:20px;
+
+    background:var(--color-primary);
+
+    color:white;
+
+    padding:.75rem 1rem;
+
+    border-radius:var(--border-radius-md);
+
+    z-index:999;
+
+}
+
+.skip-link:focus{
+
+    top:15px;
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.main-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:var(--z-index-header);
+
+    background:var(--color-surface);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.main-header__content{
+
+    min-height:var(--header-height);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:2rem;
+
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.brand__logo{
+
+    width:48px;
+
+    height:48px;
+
+}
+
+.brand__text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.brand__name{
+
+    font-weight:700;
+
+    font-size:1.2rem;
+
+    color:var(--color-primary);
+
+}
+
+.brand__description{
+
+    font-size:.9rem;
+
+    color:var(--color-text-secondary);
+
+}
+
+/* =====================================================
+   MENÚ
+===================================================== */
+
+.navigation-menu{
+
+    display:flex;
+
+    gap:2rem;
+
+}
+
+.navigation-menu__link{
+
+    font-weight:500;
+
+    transition:all .25s;
+
+}
+
+.navigation-menu__link:hover{
+
+    color:var(--color-primary);
+
+}
+
+.navigation-menu__link--active{
+
+    color:var(--color-primary);
+
+    font-weight:700;
+
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero-section{
+
+    padding-block:6rem;
+
+}
+
+.hero-section__content{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    align-items:center;
+
+    gap:4rem;
+
+}
+
+.hero-section__eyebrow{
+
+    color:var(--color-primary);
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+}
+
+.hero-section__title{
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    line-height:1.15;
+
+    margin-bottom:1.5rem;
+
+}
+
+.hero-section__description{
+
+    font-size:1.1rem;
+
+    color:var(--color-text-secondary);
+
+    margin-bottom:2rem;
+
+}
+
+.hero-section__actions{
+
+    display:flex;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-section__visual{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+/* =====================================================
+   ILUSTRACIÓN HERO
+===================================================== */
+
+.support-illustration{
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:var(--color-primary-light);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.support-illustration__icon{
+
+    font-size:5rem;
+
+    margin-bottom:1rem;
+
+}
+
+.support-illustration__status{
+
+    font-weight:700;
+
+}
+
+/* =====================================================
+   GRID BENEFICIOS
+===================================================== */
+
+.benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+
+}
+
+.benefit-item{
+
+    display:flex;
+
+    gap:1rem;
+
+    align-items:flex-start;
+
+}
+
+.benefit-item__icon{
+
+    font-size:2rem;
+
+}
+
+/* =====================================================
+   GRID ESTADÍSTICAS
+===================================================== */
+
+.status-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:2rem;
+
+}
+
+.status-card{
+
+    background:white;
+
+    padding:2rem;
+
+    border-radius:var(--border-radius-lg);
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.status-card__number{
+
+    display:block;
+
+    margin-block:1rem;
+
+    font-size:3rem;
+
+    color:var(--color-primary);
+
+}
+
+/* =====================================================
+   CONEXIÓN
+===================================================== */
+
+.connection-status{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    background:white;
+
+    padding:1rem 1.5rem;
+
+    border-radius:var(--border-radius-pill);
+
+    box-shadow:var(--shadow-md);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+}
+
+.connection-status__indicator{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:var(--color-success);
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.main-footer{
+
+    margin-top:5rem;
+
+    background:var(--color-primary);
+
+    color:white;
+
+}
+
+.main-footer__content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:2rem;
+
+    flex-wrap:wrap;
+
+    padding-block:2rem;
+
+}
+
+.main-footer__title{
+
+    display:block;
+
+    margin-bottom:.5rem;
+
+    font-size:1.2rem;
+
+}
+
+.main-footer__description{
+
+    max-width:450px;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+.footer-navigation{
+
+    display:flex;
+
+    gap:2rem;
+
+}
+
+.footer-navigation__link{
+
+    color:white;
+
+}
+
+.footer-navigation__link:hover{
+
+    color:#dceaf5;
+
+}
+
+/* =====================================================
+   UTILIDADES
+===================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
